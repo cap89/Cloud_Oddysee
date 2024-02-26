@@ -17,12 +17,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_132827) do
   create_table "bookings", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.bigint "users_id", null: false
-    t.bigint "clouds_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "cloud_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["clouds_id"], name: "index_bookings_on_clouds_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["cloud_id"], name: "index_bookings_on_cloud_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "clouds", force: :cascade do |t|
@@ -32,8 +32,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_132827) do
     t.string "address"
     t.date "available_from"
     t.date "available_until"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_clouds_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_132827) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "clouds", column: "clouds_id"
-  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "bookings", "clouds"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "clouds", "users"
 end

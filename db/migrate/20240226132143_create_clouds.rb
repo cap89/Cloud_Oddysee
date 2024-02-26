@@ -7,6 +7,7 @@ class CreateClouds < ActiveRecord::Migration[7.1]
       t.string :address
       t.date :available_from
       t.date :available_until
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
