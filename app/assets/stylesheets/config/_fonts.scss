@@ -1,9 +1,23 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Montserrat", "Helvetica", "sans-serif";
+$body-font-weight: 300;
+$body-font-size: 1.0em;
+$headers-font: "Montserrat", "Helvetica", "sans-serif";
+$headers-font-weight: 700;
+
+h5 {
+  // font-size: 2.5em;
+  font-weight: $headers-font-weight !important;
+  // margin-bottom: 0.5em;
+}
+
+.card-text {
+  font-size: $body-font-size !important;
+  font-weight: $body-font-weight !important;
+}
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +28,12 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+
+
+
+// $headline-font: 'Montserrat', sans-serif;
+// $headline-font-weight: 700;
+
+// $paragraph-font: 'Montserrat', sans-serif;
+// $paragraph-font-weight: 400;
