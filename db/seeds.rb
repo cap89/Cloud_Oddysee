@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+require "faker"
+
+puts "Clearing all data"
+User.delete_all
+Cloud.delete_all
+Booking.delete_all
+
+puts "Database cleared sucesssfully"
+
+10.times do
+
+  User.create!(
+    name:
+  )
+end
