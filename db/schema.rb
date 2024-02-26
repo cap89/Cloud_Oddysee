@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_26_140252) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_26_142631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -27,7 +27,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_26_140252) do
 
   create_table "clouds", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "category"
     t.text "description"
     t.string "address"
     t.date "available_from"
