@@ -7,4 +7,6 @@
   data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this cloud?"}
 %>
 
+<%= render "bookings/form", cloud: @cloud, booking: @booking %>
+
 <%= link_to "Back home", clouds_path %>
