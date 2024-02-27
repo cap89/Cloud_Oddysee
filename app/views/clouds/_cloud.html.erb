@@ -1,0 +1,33 @@
+<div id="<%= dom_id cloud %>">
+
+<img height="300px", src="<%= cloud.picture_url %>" alt="<%= cloud.name %>">
+
+  <p>
+    <strong>Name:</strong>
+    <%= cloud.name %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= cloud.category %>
+  </p>
+
+  <p>
+    <strong>Description</strong>
+    <%= cloud.description %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= cloud.address %>
+  </p>
+
+    <div>
+
+    <strong>Availablility</strong>
+    <p>Available from: <%= cloud.available_from %></p>
+    <p>Available until: <%= cloud.available_until %></p>
+
+  </div>
+
+</div>
