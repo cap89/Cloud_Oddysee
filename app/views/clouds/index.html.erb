@@ -1,4 +1,18 @@
-<h2>☁️ check out these clouds ☁️</h2>
-<% @clouds.each do |cloud| %>
-<p><%= link_to cloud.name, cloud %></p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% @clouds.each do |cloud| %>
+      <div class="col-sm-4 mb-3">
+        <div class="card custom-card" style="border-radius: 20px;">
+          <%= image_tag(cloud.picture_url, class: "card-img-top", alt: "Cloud Image") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= cloud.name %></h5>
+            <p class="card-text"><%= cloud.description %></p>
+            <div class="d-flex justify-content-center align-items-end">
+              <a href="<%= cloud_path(cloud) %>" class="btn btn-primary">Dream here!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

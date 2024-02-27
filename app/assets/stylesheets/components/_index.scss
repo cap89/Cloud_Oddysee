@@ -4,3 +4,43 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "footer";
+
+
+// Direct style addition
+.container {
+  padding: 20px;
+}
+
+.custom-card {
+  position: relative; /* Set the position of the card as relative */
+  height: 100%;
+}
+
+.card-title, .card-text {
+  text-align: center; /* Center align text */
+}
+
+.custom-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.custom-card .btn-primary {
+  position: relative;
+  background-color: rgb(233, 71, 98);
+  border-color: pink;
+  bottom: 10; /* Stick the button to the bottom */
+  left: 10; /* Align the button to the left */
+  right: 10; /* Align the button to the right */
+  width: 95%;
+}
+
+.card-img-top {
+  max-width: 100%; /* Ensure the image doesn't exceed the width of its container */
+  max-height: 200px; /* Set a maximum height for the image */
+  object-fit: cover; /* Ensure the image covers its entire container */
+  border-top-left-radius: inherit; /* Inherit the border radius from the parent */
+  border-top-right-radius: inherit; /* Inherit the border radius from the parent */
+}
