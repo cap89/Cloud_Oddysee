@@ -6,6 +6,7 @@ class CloudsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -49,4 +50,3 @@ class CloudsController < ApplicationController
     params.require(:cloud).permit(:name, :category, :description, :address)
   end
 end
-
