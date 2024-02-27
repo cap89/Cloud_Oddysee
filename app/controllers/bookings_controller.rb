@@ -12,9 +12,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @cloud = Cloud.find(params[:cloud_id])
     @booking.user = current_user
-    raise
+    @booking.cloud = @cloud
     if @booking.save
-    redirect_to clouds_path, notice: 'Booking was successfully created.'
+    redirect_to cloud_path(@cloud), notice: 'Booking was successfully created.'
     else
       render :new
     end
