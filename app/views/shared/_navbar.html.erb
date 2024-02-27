@@ -13,6 +13,12 @@
       <%= image_tag("user_icon.png", alt: "Cloud Odyssey", width: 50) %>
       </a>
 
+    <ul>
+      <li class="nav-item" style="margin-right: 20px;">
+        <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+        <%= link_to 'Profile', edit_user_registration_path, class: "nav-link" %>
+      </li>
+    </ul>
     </div>
   </div>
 </nav>
