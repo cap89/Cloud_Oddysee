@@ -1,34 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4">
-      <div class="card custom-card" style="width: 18rem; border-radius: 20px;">
-        <img src="https://img.freepik.com/vektoren-kostenlos/aquarell-zuckerbaumwollwolken-hintergrund_23-2149230243.jpg?t=st=1708957671~exp=1708961271~hmac=c3d4fb3e3662af15e267912d519c1d10c10659a1e8edd781e12c1e1920fe59f8&w=1800" class="card-img-top" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card Title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+    <% @clouds.each do |cloud| %>
+      <div class="col-sm-4">
+        <div class="card custom-card" style="width: 18rem; border-radius: 20px;">
+          <%= image_tag(cloud.picture_url, class: "card-img-top", alt: "Cloud Image") %>
+          <div class="card-body">
+            <h5 class="card-title"><%= cloud.name %></h5>
+            <p class="card-text"><%= cloud.description %></p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card custom-card" style="width: 18rem; border-radius: 20px;">
-        <img src="https://img.freepik.com/fotos-kostenlos/wolke-in-einem-blauen-himmel_1122-624.jpg?t=st=1708957704~exp=1708961304~hmac=cfb7f94a025e403d320b1d8c4c596b16f3450b7c30a5807f190f74ffa9e7130a&w=1800" class="card-img-top" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card Title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card custom-card" style="width: 18rem; border-radius: 20px;">
-        <img src="https://img.freepik.com/fotos-kostenlos/weisse-wolken-und-blauer-himmel_326561-7.jpg?t=st=1708957730~exp=1708961330~hmac=f6ec9afbe6776dc329b458407e96345ecd99a8a1c80a6455ed62a66dcf98bca6&w=1800" class="card-img-top" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card Title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
