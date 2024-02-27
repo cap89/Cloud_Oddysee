@@ -2,17 +2,19 @@
   <div class="container">
     <!-- Replace "Your Brand" with an SVG image -->
     <a class="navbar-brand" href="#">
-    <%= image_tag("logo.png", alt: "Cloud Odyssey", width: 150) %>
+    <%= image_tag("logo.png", alt: "Cloud Odyssey", width: 220) %>
     </a>
+
+
     <!-- Always show menu items, adjusted for flexbox and custom spacing -->
     <ul class="navbar-nav ml-auto d-flex flex-row">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search for a cloud..." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
-    <li class="nav-item" style="margin-right: 20px;">
-      <%= link_to 'Profile', root_path, class: "nav-link" %>
-    </li>
+      <a class="navbar-brand" href="#">
+      <%= image_tag("user_icon.png", alt: "Cloud Odyssey", width: 50) %>
+      </a>
+
+      <li class="nav-item" style="margin-right: 20px;">
+        <%= link_to 'Profile', root_path, class: "nav-link" %>
+      </li>
     </ul>
   </div>
 </nav>
