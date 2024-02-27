@@ -16,4 +16,19 @@
 .navbar {
   height: 100px;
   padding: 10px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  vertical-align: middle;
+}
+
+.navbar-content {
+  text-indent: 100px;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
 }
