@@ -1,0 +1,24 @@
+<h2>This is the profile page</h2>
+
+<p>First name <%= @user.first_name %></p>
+<p>Last name <%= @user.last_name %></p>
+<p>Email <%= @user.email %></p>
+<p>Your user id (just for our info) <%= @user.id %></p>
+
+<h2>These the clouds you booked</h2>
+
+<% @bookings.each do |booking| %>
+<div>
+<img height="200px", src="<%= booking.cloud.picture_url %>" alt="<%= booking.cloud.name %>">
+<p>Booking Start Date: <%= booking.start_date %>
+    Booking Start Date: <%= booking.end_date %></p>
+<p>Cloud name: <%= booking.cloud.name %></p>
+<p>Cloud category: <%= booking.cloud.category %></p>
+<p>Cloud address: <%= booking.cloud.address %></p>
+</div>
+<div>
+<%= link_to "Delete",
+  booking_path(booking),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"} %>
+  </div>
+  <% end %>
