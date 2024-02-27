@@ -49,4 +49,3 @@ class CloudsController < ApplicationController
     params.require(:cloud).permit(:name, :category, :description, :address)
   end
 end
-
