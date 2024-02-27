@@ -1,0 +1,9 @@
+<h2>This is a new booking</h2>
+
+<%= simple_form_for [@user, @booking] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit %>
+<% end %>
+
+<%# comparing dates and availability %>
