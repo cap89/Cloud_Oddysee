@@ -1,12 +1,6 @@
+<h1>This is the overview of a cloud</h1>
 
-<ul>
-<li><%= link_to @cloud.name %></li>
-
-<li><%= link_to @cloud.category %></li>
-<li><%= link_to @cloud.description %></li>
-<li><%= link_to @cloud.available_from %></li>
-<li><%= link_to @cloud.available_until %></li>
-</ul>
+<%= render @cloud %>
 
 <%= link_to "Delete",
   cloud_path(@cloud),
