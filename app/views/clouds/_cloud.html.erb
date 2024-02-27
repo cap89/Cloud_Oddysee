@@ -1,33 +1,18 @@
-<div id="<%= dom_id cloud %>">
-
-<img height="300px", src="<%= cloud.picture_url %>" alt="<%= cloud.name %>">
-
-  <p>
-    <strong>Name:</strong>
-    <%= cloud.name %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
-    <%= cloud.category %>
-  </p>
-
-  <p>
-    <strong>Description</strong>
-    <%= cloud.description %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= cloud.address %>
-  </p>
-
-    <div>
-
-    <strong>Availablility</strong>
-    <p>Available from: <%= cloud.available_from %></p>
-    <p>Available until: <%= cloud.available_until %></p>
-
+<div id="<%= dom_id(cloud) %>" class="cloud-details">
+  <div class="cloud-header">
+    <div class="hero-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('<%= cloud.picture_url %>');">
+      <div class="hero-content">
+        <h2><%= cloud.name %></h2>
+      </div>
+    </div>
   </div>
 
+  <div class="cloud-info">
+    <div class="card"><strong>Description:</strong> <%= cloud.description %></div>
+    <div class="card"><strong>Address:</strong> <%= cloud.address %></div>
+
+
+<%= link_to "Check availability", clouds_path, class: "button availability-button" %>
+
+  </div>
 </div>
