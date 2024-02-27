@@ -10,7 +10,31 @@
   padding: 20px;
 }
 
-.page-container {
-  position: relative;
-  min-height: 100vh;
+/* _footer.scss */
+.footer {
+  text-align: center;
+
+  img {
+    width: 200px; /* Adjust as needed */
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0; /* Remove margin-right for the last item */
+      }
+
+      a {
+        color: grey; /* Set text color to grey */
+        text-decoration: none; /* Remove underline */
+      }
+    }
+  }
 }
