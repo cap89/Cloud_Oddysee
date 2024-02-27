@@ -6,6 +6,12 @@
 @import "footer";
 
 
+.main-container {
+  min-height: calc(100vh - 100px);
+  padding-top: 120px;
+  padding-bottom: 20px;
+}
+
 // Direct style addition
 .container {
   padding: 20px;

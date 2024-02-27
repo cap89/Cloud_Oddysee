@@ -1,0 +1,62 @@
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: bottom;
+  height: 400px; /* Adjust height as needed */
+}
+
+.hero-content h2 {
+  color: white;
+  text-align: center;
+}
+
+.cloud-info {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  flex-direction: column; /* Stack cards vertically */
+}
+
+.cloud-info .card {
+  border-color: grey;
+  text-align: center;
+  border-radius: 20px;
+  width: 70%;
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  flex-wrap: wrap; /* Wrap buttons to next line if space runs out */
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  margin: 10px 5px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.back-button {
+  background-color: #6c757d;
+}
+
+.availability-button {
+  background-color: #28a745;
+  width: 70%;
+  text-align: center;
+  margin-top: 40px;
+}
