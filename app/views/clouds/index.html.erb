@@ -1,6 +1,4 @@
 <h2>☁️ check out these clouds ☁️</h2>
 <% @clouds.each do |cloud| %>
-<ul>
-<li><%= link_to cloud.name %></li>
-</ul>
+<p><%= link_to cloud.name, cloud %></p>
 <% end %>
