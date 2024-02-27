@@ -1,11 +1,16 @@
 .footer {
   height: 100px;
-  position: fixed;
+  position: relative;
+  bottom: 0;
   left: 0;
-  bottom: 0px;
   width: 100%;
   background-color: white;
   color: white;
   text-align: center;
   padding: 20px;
+}
+
+.page-container {
+  position: relative;
+  min-height: 100vh;
 }
