@@ -1,8 +1,6 @@
 class CloudsController < ApplicationController
-  # skip_before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_cloud, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, except: [:index, ]
 
   def index
     @clouds = Cloud.all
