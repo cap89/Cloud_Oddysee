@@ -9,6 +9,8 @@ class BookingsController < ApplicationController
   def edit
   end
 
+  #test
+
   def create
     @booking = Booking.new(booking_params)
     @cloud = Cloud.find(params[:cloud_id])
