@@ -7,3 +7,5 @@ class Cloud < ApplicationRecord
     self.save
   end
 end
+
+
