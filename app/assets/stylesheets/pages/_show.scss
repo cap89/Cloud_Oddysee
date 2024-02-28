@@ -5,6 +5,7 @@
   align-items: center;
   background-size: cover;
   background-position: bottom;
+  border-radius: 20px;
   height: 400px; /* Adjust height as needed */
 }
 
@@ -20,11 +21,28 @@
   flex-direction: column; /* Stack cards vertically */
 }
 
+.cloud-info .show-card {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 20px;
+
+}
+
+.show-address {
+  margin-top: 30px;
+  font-size: 30px;
+  padding: 20px;
+  align-items: left;
+}
+
+.show-address img {
+  color: #dc3545;
+}
+
 .cloud-info .card {
   border-color: grey;
   text-align: center;
   border-radius: 20px;
-  width: 70%;
   margin-top: 20px;
   padding: 20px;
   background: white;
@@ -40,10 +58,17 @@
   display: inline-block;
   padding: 10px 15px;
   margin: 10px 5px;
-  background-color: #007bff;
+  background-color: pink;
   color: white;
   text-decoration: none;
   border-radius: 5px;
+}
+
+#new_booking {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+margin-bottom: 20 px;
 }
 
 .delete-button {
@@ -52,11 +77,4 @@
 
 .back-button {
   background-color: #6c757d;
-}
-
-.availability-button {
-  background-color: #28a745;
-  width: 70%;
-  text-align: center;
-  margin-top: 40px;
 }
