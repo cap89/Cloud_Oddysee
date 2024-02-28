@@ -4,6 +4,6 @@
 
 <%= render "bookings/form", cloud: @cloud, booking: @booking %>
 
-<%= link_to "Delete", cloud_path(@cloud), method: :delete, data: { confirm: "Are you sure you want to delete this cloud?" }, class: "button delete-button"
+<%= link_to "Delete", cloud_path(@cloud), method: :delete, data: { confirm: "Are you sure you want to delete this cloud?" }, class: "button delete-button" %>
 
 <%= link_to "Back home", clouds_path, class: "button back-button" %>
