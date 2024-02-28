@@ -5,38 +5,37 @@
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "signup-form" }) do |f| %>
         <%= f.error_notification %>
-
+          <div class="form-control string optional">
             <% f.label :email, "Email:", class: "input-label" %>
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email", class: "form-control", placeholder: "Email" } %>
+                        input_html: { autocomplete: "email", class: "form-control" } %>
 
             <% f.label :first_name, "First Name:", class: "input-label" %>
             <%= f.input :first_name,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "first_name", class: "form-control", placeholder: "First Name" } %>
+                        input_html: { autocomplete: "first_name", class: "form-control" } %>
 
             <% f.label :last_name, "Last Name:", class: "input-label" %>
             <%= f.input :last_name,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "last_name", class: "form-control", placeholder: "Last Name" } %>
+                        input_html: { autocomplete: "last_name", class: "form-control" } %>
 
             <% f.label :password, "Password:", class: "input-label" %>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password", class: "form-control", placeholder: "Password" } %>
+                        input_html: { autocomplete: "new-password", class: "form-control"} %>
 
             <% f.label :password_confirmation, "Confirm Password:", class: "input-label" %>
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" } %>
-
+                        input_html: { autocomplete: "new-password", class: "form-control" } %>
         </div>
-
+</div>
         <div class="form-actions">
           <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block" %>
         </div>
