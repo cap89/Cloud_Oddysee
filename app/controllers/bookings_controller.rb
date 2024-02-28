@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:edit, :update, :destroy]
 
   def new
     @booking = Booking.new
@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
     @cloud = Cloud.find(params[:cloud_id])
     @booking.user = current_user
     @booking.cloud = @cloud
-    raise
     if @booking.save
     redirect_to cloud_path(@cloud), notice: 'Booking was successfully created.'
     else
