@@ -1,0 +1,118 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden-content {
+  display: none;
+}
+
+.clickable {
+  cursor: pointer;
+  color: #007bff; /* Bootstrap's default link color for reference */
+}
+
+
+.profile-clouds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Flex container for cards */
+.booked-clouds, .owned-clouds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 20px; /* Adds space between the cards */
+}
+
+.booked-clouds > div, .owned-clouds > div {
+  border: 1px solid #ccc;
+  margin: 10px; /* Space below each card */
+  padding: 10px;
+  height: 30%;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  flex-basis: calc(33.333% - 40px); /* Adjust the width of the cards; subtract gap */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booked-clouds img, .owned-clouds img {
+  width: 100%; /* Adjusts the image width to fill the container */
+  height: 200px; /* Fixed height for all images */
+  display: block;
+  margin-bottom: 10px; /* Adds some space below the image */
+  object-fit: cover; /* Ensure the image covers its entire container */
+  border-top-left-radius: inherit; /* Inherit the border radius from the parent */
+  border-top-right-radius: inherit; /* Inherit the border radius from the parent */
+}
+
+
+.booked-clouds p, .owned-clouds p, .owned-clouds h2 {
+  color: #333;
+  text-align: left; /* Updated from center to left */
+  margin: 5px 0;
+}
+
+/* Since the parent divs are set to align items in the center,
+   you might want to adjust that for the textual content specifically */
+.booked-clouds > div, .owned-clouds > div {
+  align-items: flex-start; /* Aligns content to the start (left) of the flex container */
+}
+
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .booked-clouds > div, .owned-clouds > div {
+      flex-basis: calc(50% - 40px); /* Adjusts the width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .booked-clouds > div, .owned-clouds > div {
+      flex-basis: 100%; /* Each card takes full width on very small screens */
+  }
+}
+
+/* Utility and additional styles */
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+
+/* Existing styles for .booked-clouds > div, .owned-clouds > div, etc. */
+
+/* Additional styles for the delete link */
+.delete-link {
+  margin-top: auto; /* Pushes the delete link to the bottom of the card */
+  padding-top: 20px; /* Adds some space above the delete link */
+  width: 100%; /* Ensures the link's container spans the full width of the card */
+  text-align: left; /* Centers the delete link */
+  border-top: 1px solid #eee; /* Adds a subtle separator */
+}
+
+.delete-link a {
+  color: #ff4d4d; /* A common delete color, but choose what fits your design */
+  font-weight: bold; /* Makes the delete link stand out */
+  padding: 5px 10px; /* Adds some padding for better touch targets */
+  border-radius: 5px; /* Optional: adds rounded corners for a button-like appearance */
+  background-color: #fff3f3; /* Light background color for the delete link/button */
+}
+
+.delete-link a:hover {
+  background-color: #ffcccc; /* Slightly darker background on hover for better feedback */
+  text-decoration: none; /* Removes underline on hover for a cleaner look */
+}
+
+#edit {
+  text-decoration: none;
+  text-align: left;
+  text-decoration: none;
+}
