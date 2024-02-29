@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login-form-wrapper">
       <h2 class="headline">Ready to dive in? Let's your next adventure! Sign in now and explore the possibilities that lie ahead.</h2>
-
+<br>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-form" }) do |f| %>
         <div class="form-group">
           <%= f.input :email,
@@ -21,10 +21,12 @@
           </div>
         <% end %>
 
-        <%= f.button :submit, "Log in", class: "btn btn-primary btn-block mt-3" %>
+        <%= f.button :submit, "Log in", class: "custom-button-update" %>
       <% end %>
 
-      <%= render "devise/shared/links" %>
+
     </div>
+
   </div>
+      <%= render "devise/shared/links" %>
 </div>

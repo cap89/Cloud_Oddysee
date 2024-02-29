@@ -1,22 +1,16 @@
 <div class="container">
   <h2 class="headline"><%= time_based_greeting %> <%= @user.first_name %>!</h2>
 
-  <!-- Uncomment if you want to display these details -->
-  <!-- <p>First name: <%= @user.first_name %></p> -->
-  <!-- <p>Last name: <%= @user.last_name %></p> -->
-  <!-- <p>Email: <%= @user.email %></p> -->
-  <!-- <p>Your user id (just for our info): <%= @user.id %></p> -->
-
-
-
-
   <p id="edit"><%= image_tag("edit.svg", alt: "edit", height: "20px") %><%= link_to "  Edit your profile", edit_user_registration_path %></p>
   <br>
   <br>
-  <h4 class="headline-profile">The clouds you've reserved, floating in your slice of the sky:</h4>
+  <h4 class="headline-profile">The clouds you've reserved, floating in your slice of the sky.</h4>
 
 
-  <div class="booked-clouds">
+<div class="booked-clouds">
+  <% if @bookings.empty? %>
+<p>In the realm of empty reservations,<%= link_to " click here to check out some fluffy clouds.", clouds_path %></p>
+  <% else %>
     <% @bookings.each do |booking| %>
       <div class="card">
         <img height="200px" src="<%= booking.cloud.picture_url %>" alt="<%= booking.cloud.name %>">
@@ -30,26 +24,11 @@
         </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
+
 <br>
 <br>
-  <h4 class="headline-profile">Glimpse the clouds you've spotted and kindly offered:</h4>
-
-  <div class="booked-clouds">
-    <% @bookings.each do |booking| %>
-      <div class="card">
-        <img height="200px" src="<%= booking.cloud.picture_url %>" alt="<%= booking.cloud.name %>">
-        <h5 class="headline-profile"><%= booking.cloud.name %></h5>
-        <p><strong><%= booking.cloud.address %></strong></p>
-        <p>Start of Reservation: <strong><%= booking.start_date %></strong></p>
-        <p>End of of Reservation: <strong><%= booking.end_date %></strong></p>
-        <div class="delete-link">
-          <%= link_to "Release this reservation", booking_path(booking),
-          data: {turbo_method: :delete, turbo_confirm: "Do you truly wish to release this reservation, letting it vanish without a trace?"} %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
+  <h4 class="headline-profile">Glimpse the clouds you've spotted and kindly offered.</h4>
 
 </div>
