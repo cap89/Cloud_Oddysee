@@ -1,0 +1,24 @@
+.custom-button-delete {
+  background-color: #b7b7b7; /* Green */
+  color: rgb(0, 0, 0);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 100%;
+}
+
+.custom-button-update {
+  background-color: #22a04a; /* Green */
+  color: rgb(255, 255, 255);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  width: 100%;
+}
+
+.custom-button-update:hover {
+  /* Hover effect styles go here */
+  background-color: #199837;
+  color: white; /* A different shade of green */
+}
+

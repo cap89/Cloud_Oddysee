@@ -13,8 +13,13 @@
   <%= f.input :available_until,
         as: :string,
         input_html: { data: { controller: "calendar-new-cloud" } } %>
-  <%= f.submit %>
+  <div class="form-actions">
+          <%= f.button :submit, "Offer a cloud", class: "custom-button-update" %>
+        </div>
+
 <% end %>
+
+
 
 </p>
 </div>
