@@ -10,14 +10,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    
     @booking = Booking.new(booking_params)
     @cloud = Cloud.find(params[:cloud_id])
     @booking.user = current_user
     @booking.cloud = @cloud
-    if @booking.save
+    if @booking.save!
     redirect_to cloud_path(@cloud), notice: 'Booking was successfully created.'
     else
-      render :new, notice: 'Booking was not created. Please try again.'
+      render :new, status: :unprocessable_entity, notice: 'Booking was not created. Please try again.'
     end
   end
 
