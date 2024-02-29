@@ -1,5 +1,17 @@
-<%= simple_form_for [cloud, booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.submit %>
-<% end %>
+<div data-controller="datepicker"
+    data-datepicker-available-from-value="<%= @cloud.available_from %>"
+    data-datepicker-available-until-value="<%= @cloud.available_until %>">
+  <%= simple_form_for [@cloud, @booking] do |f| %>
+    <%= f.error_notification %>
+
+    <%= f.input :start_date,
+          as: :string,
+          input_html: { data: { datepicker_target: "start" } } %>
+    <%= f.input :end_date,
+          as: :string,
+          input_html: { data: { datepicker_target: "end" } } %>
+    <%= f.submit %>
+  <% end %>
+
+  <span data-datepicker-name-value="<%= @cloud.name %>"></span>
+</div>

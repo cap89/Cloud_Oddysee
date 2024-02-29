@@ -10,9 +10,13 @@
   <div class="cloud-info">
     <div class="card"><strong>Description:</strong> <%= cloud.description %></div>
     <div class="card"><strong>Address:</strong> <%= cloud.address %></div>
+    <div class="card"><strong>Availability</strong> <%= cloud.available_from %> <%= cloud.available_until %></div>
 
 
 <%= link_to "Check availability", clouds_path, class: "button availability-button" %>
 
   </div>
 </div>
+
+
+
