@@ -48,6 +48,6 @@ class CloudsController < ApplicationController
   end
 
   def cloud_params
-    params.require(:cloud).permit(:name, :category, :description, :address)
+    params.require(:cloud).permit(:name, :category, :description, :address, :picture_url)
   end
 end
