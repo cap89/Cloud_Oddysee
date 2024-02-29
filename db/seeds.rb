@@ -49,6 +49,9 @@ number_of_records.times do
   category = "Clouds"
   description = descriptions.sample
   address = Faker::Address.full_address
+  latitude = Faker::Address.latitude
+  longitude = Faker::Address.longitude
+
 
   # Randomly determine availability
   is_available = [true, false].sample
@@ -73,7 +76,9 @@ number_of_records.times do
     picture_url: picture_url,
     user: user,
     available_from: available_from,
-    available_until: available_until
+    available_until: available_until,
+    latitude: latitude,
+    longitude: longitude
   )
 end
 
