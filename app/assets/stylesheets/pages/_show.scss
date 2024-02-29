@@ -1,4 +1,15 @@
 
+/* Existing styles */
+.map-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
 .hero-image {
   display: flex;
   justify-content: center;
@@ -7,7 +18,24 @@
   background-position: bottom;
   border-radius: 20px;
   height: 400px; /* Adjust height as needed */
+  position: relative; /* Ensure positioning context for the iframe */
+  z-index: 1; /* Keep the hero image under the iframe */
 }
+
+/* New styles for the iframe */
+.cloud-map {
+  position: absolute;
+  bottom: -50px; /* Adjust for desired overlap */
+  right: 20px; /* Place it towards the right or adjust as needed */
+  z-index: 2; /* Ensures it's above the hero image */
+  border: 1px solid black; /* Optional, for visibility */
+}
+
+/* Adjust the container or its parent for relative positioning if not already set */
+.container {
+  position: relative; /* This is crucial for positioning the iframe */
+}
+
 
 .hero-content h2 {
   color: white;

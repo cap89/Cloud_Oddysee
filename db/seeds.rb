@@ -38,24 +38,43 @@ unless user
 end
 
 # Create cloud records
-number_of_records = 1
+number_of_records = 7
 
 descriptions = Array.new(10) do
   "Experience #{Faker::Address.community} with our cloud. Enjoy #{['stunning sunsets', 'gorgeous skyline views', 'peaceful mornings', 'starlit nights'].sample} from your private formation. This cloud features #{['luxury bedding', 'an eco-friendly atmosphere', 'spacious lounging areas', 'breathtaking panoramic views'].sample} and #{['modern amenities', 'personalized experiences', 'exclusive access to celestial events', 'the best in cloud comfort'].sample}. Ideal for those seeking a unique and serene getaway."
 end
 
+# Custom method to generate whimsical cloud addresses
+def generate_cloud_address
+  "Cloud No. #{Faker::Number.number(digits: 3)}, #{Faker::Address.city} Skies, In the vicinity of #{Faker::Space.constellation} Constellation"
+end
+
+
 number_of_records.times do
   name = Faker::Science.element
   category = "Clouds"
   description = descriptions.sample
-  address = Faker::Address.full_address
-  latitude = Faker::Address.latitude
-  longitude = Faker::Address.longitude
+  address = generate_cloud_address
 
+  # Custom method to generate latitude and longitude over land
+  def generate_land_coordinates
+    # Define ranges for latitudes and longitudes over large landmasses
+    lat_ranges = [[-34.0, -23.0], [30.0, 45.0]] # Example ranges for South America and Europe
+    lng_ranges = [[-74.0, -58.0], [10.0, 25.0]] # Corresponding longitude ranges
+
+    lat_range = lat_ranges.sample
+    lng_range = lng_ranges.sample
+
+    latitude = Faker::Number.between(from: lat_range[0], to: lat_range[1])
+    longitude = Faker::Number.between(from: lng_range[0], to: lng_range[1])
+
+    [latitude, longitude]
+  end
+
+  latitude, longitude = generate_land_coordinates
 
   available_from = Faker::Date.forward(days: 23) # Start date within the next 23 days
   available_until = available_from + rand(1..10) # End date is between 1 to 10 days after the start date
-
 
   # Fetch a random picture URL from Unsplash
   picture_response = Unsplash::Photo.random(query: "clouds")
