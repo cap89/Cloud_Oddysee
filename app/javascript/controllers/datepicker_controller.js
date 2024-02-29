@@ -15,51 +15,56 @@ export default class extends Controller {
   }
 
   initFlatpickr() {
-    console.log(this.availableFromValue);
-    flatpickr(this.startTarget, {
+    const startInput = this.startTarget;
+    const endInput = this.endTarget;
+
+    flatpickr(startInput, {
       mode: "range",
       dateFormat: "Y-m-d",
       enable: [
         {
-            from: this.availableFromValue,
-            to: this.availableUntilValue
+          from: this.availableFromValue,
+          to: this.availableUntilValue
         }
       ],
       showMonths: 2,
-      onChange: this.updateDates.bind(this),
-      onClose: this.updateEndInput.bind(this)
+      onChange: selectedDates => {
+        this.updateDates(selectedDates, startInput, endInput);
+      },
+      onClose: selectedDates => {
+        this.updateEndInput(selectedDates, endInput);
+      }
     });
 
-    flatpickr(this.endTarget, {
+    flatpickr(endInput, {
       mode: "range",
       dateFormat: "Y-m-d",
       enable: [
         {
-            from: this.availableFromValue,
-            to: this.availableUntilValue
+          from: this.availableFromValue,
+          to: this.availableUntilValue
         }
       ],
       showMonths: 2,
-      onChange: this.updateDates.bind(this),
-      onClose: this.updateEndInput.bind(this)
+      onChange: selectedDates => {
+        this.updateDates(selectedDates, startInput, endInput);
+      },
+      onClose: selectedDates => {
+        this.updateEndInput(selectedDates, endInput);
+      }
     });
-
   }
 
-  updateDates(selectedDates) {
+  updateDates(selectedDates, startInput, endInput) {
     if (selectedDates.length === 2) {
-      // Update the start date input
-      this.startTarget.value = selectedDates[0].toISOString().substring(0, 10);
-
-      // Update the end date input
-      this.endTarget.value = selectedDates[1].toISOString().substring(0, 10);
+      startInput.value = selectedDates[0].toISOString().substring(0, 10);
+      endInput.value = selectedDates[1].toISOString().substring(0, 10);
     }
   }
 
-  updateEndInput(selectedDates) {
-    // Ensure the end date is updated when the calendar is closed
+  updateEndInput(selectedDates, endInput) {
     if (selectedDates.length === 2) {
-      this.endTarget.value = selectedDates[1].toISOString().substring(0, 10);
+      endInput.value = selectedDates[1].toISOString().substring(0, 10);
     }
   }
 }

@@ -1,8 +1,13 @@
 <%= simple_form_for @cloud do |f| %>
   <%= f.input :name %>
-  <%= f.input :category %>
   <%= f.input :description %>
   <%= f.input :address %>
   <%= f.input :picture_url %>
+  <%= f.input :available_from,
+        as: :string,
+        input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :available_until,
+        as: :string,
+        input_html: { data: { controller: "datepicker" } } %>
   <%= f.submit %>
 <% end %>
