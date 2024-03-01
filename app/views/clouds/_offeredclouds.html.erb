@@ -1,0 +1,14 @@
+<div class="booked-clouds">
+  <% @clouds.each do |cloud| %>
+    <div class="card">
+      <img height="200px" src="<%= cloud.picture_url %>" alt="<%= cloud.name %>">
+      <h5 class="headline-profile"><%= cloud.name %></h5>
+      <p><strong><%= cloud.address %></strong></p>
+      <p><strong><%= cloud.available_from %></strong></p>
+      <p><strong><%= cloud.available_until %></strong></p>
+      <div class="delete-link">
+      <%= link_to "Remove this cloud", cloud_path(cloud), method: :delete, data: { confirm: "Are you sure you want to delete this cloud?" } %>
+      </div>
+    </div>
+  <% end %>
+</div>
