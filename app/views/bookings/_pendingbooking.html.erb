@@ -1,8 +1,4 @@
   <div class="booked-clouds">
-    <% if @bookings.empty? %>
-  <p>Hunt for clouds and initiate offerings.<%= link_to " Click here to create your cloud offer.", new_cloud_path %></p>
-
-  <% else %>
     <% pending_bookings.each do |booking| %>
     <div class="card">
                 <img height="200px" src="<%= booking.cloud.picture_url %>" alt="<%= booking.cloud.name %>">
@@ -16,5 +12,4 @@
               </div>
           </div>
         <% end %>
-      <% end %>
 </div>

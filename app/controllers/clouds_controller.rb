@@ -8,6 +8,14 @@ class CloudsController < ApplicationController
 
   def show
     @booking = Booking.new
+
+    @clouds = Cloud.all
+    @markers = @clouds.geocoded.map do |cloud|
+      {
+        lat: cloud.latitude,
+        lng: cloud.longitude
+      }
+    end
   end
 
   def new
@@ -48,6 +56,6 @@ class CloudsController < ApplicationController
   end
 
   def cloud_params
-    params.require(:cloud).permit(:name, :category, :description, :address, :picture_url)
+    params.require(:cloud).permit(:name, :category, :description, :address, :latitude, :longitude, :picture_url)
   end
 end
