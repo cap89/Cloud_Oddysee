@@ -1,6 +1,6 @@
 class Cloud < ApplicationRecord
   belongs_to :user
-  geocoded_by :address
+#  geocoded_by :address
   before_validation :sanitize_picture_url, on: :create
   after_validation :geocode, if: :will_save_change_to_address?
   validates :description, length: { minimum: 220 }
