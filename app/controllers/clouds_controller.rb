@@ -1,6 +1,6 @@
 class CloudsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_cloud, only: [:show, :edit, :update, :destroy]
+  before_action :set_cloud, only: [:show, :edit, :update, :destroy, :accept, :reject]
 
   def index
     @clouds = Cloud.all
@@ -47,6 +47,16 @@ class CloudsController < ApplicationController
   def destroy
     @cloud.destroy
     redirect_to clouds_path, notice: 'Cloud was successfully destroyed.'
+  end
+
+  def accept
+    @booking.update(status: :accepted)
+    redirect_to user_profile_path, notice: 'Booking accepted.'
+  end
+
+  def reject
+    @booking.update(status: :rejected)
+    redirect_to user_profile_path, notice: 'Booking rejected.'
   end
 
   private
