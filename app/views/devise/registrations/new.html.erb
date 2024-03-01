@@ -1,50 +1,43 @@
-<div class="center-container">
-  <div class="signup-container">
+<div class="container">
+  <div class="row">
     <div class="signup-form-wrapper">
-      <h2>Sign up</h2>
+      <h2 class="headline">Embark on a journey, enlist with zeal, sign up to discover, what the future will reveal.</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "signup-form" }) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-group">
-          <div class="input-group">
-            <%= f.label :email, "Email:", class: "input-label" %>
+
             <%= f.input :email,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "email", class: "form-control", placeholder: "Email" } %>
-          </div>
-          <div class="input-group">
-            <%= f.label :first_name, "First Name:", class: "input-label" %>
+                        input_html: { autocomplete: "email", class: "form-control" } %>
+
+
             <%= f.input :first_name,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "first_name", class: "form-control", placeholder: "First Name" } %>
-          </div>
-          <div class="input-group">
-            <%= f.label :last_name, "Last Name:", class: "input-label" %>
+                        input_html: { autocomplete: "first_name", class: "form-control" } %>
+
+
             <%= f.input :last_name,
                         required: true,
                         autofocus: true,
-                        input_html: { autocomplete: "last_name", class: "form-control", placeholder: "Last Name" } %>
-          </div>
-          <div class="input-group">
-            <%= f.label :password, "Password:", class: "input-label" %>
+                        input_html: { autocomplete: "last_name", class: "form-control" } %>
+
+
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                        input_html: { autocomplete: "new-password", class: "form-control", placeholder: "Password" } %>
-          </div>
-          <div class="input-group">
-            <%= f.label :password_confirmation, "Confirm Password:", class: "input-label" %>
+                        input_html: { autocomplete: "new-password", class: "form-control"} %>
+
+
             <%= f.input :password_confirmation,
                         required: true,
-                        input_html: { autocomplete: "new-password", class: "form-control", placeholder: "Confirm Password" } %>
-          </div>
+                        input_html: { autocomplete: "new-password", class: "form-control" } %>
         </div>
-
+</div>
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class: "btn btn-primary btn-block" %>
+          <%= f.button :submit, "Sign up", class: "custom-button-update" %>
         </div>
       <% end %>
 

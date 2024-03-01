@@ -1,2 +1,26 @@
-<h2>Create a cloud</h2>
-<%= render "simpleform", cloud: @cloud %>
+<div class="container">
+  <div class="row">
+<h2 class="headline">Offer a cloud, light and fluffy, like a feather floating, simply puffy.</h2>
+<p class="card-text" class="calendar-new-cloud" >
+<%= simple_form_for @cloud do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :picture_url %>
+  <%= f.input :available_from,
+        as: :string,
+        input_html: { data: { controller: "calendar-new-cloud" } } %>
+  <%= f.input :available_until,
+        as: :string,
+        input_html: { data: { controller: "calendar-new-cloud" } } %>
+  <div class="form-actions">
+          <%= f.button :submit, "Offer a cloud", class: "custom-button-update" %>
+        </div>
+
+<% end %>
+
+
+
+</p>
+</div>
+</div>

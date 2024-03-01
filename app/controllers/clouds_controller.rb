@@ -2,7 +2,6 @@ class CloudsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_cloud, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @clouds = Cloud.all
   end
@@ -49,6 +48,6 @@ class CloudsController < ApplicationController
   end
 
   def cloud_params
-    params.require(:cloud).permit(:name, :category, :description, :address)
+    params.require(:cloud).permit(:name, :category, :description, :address, :picture_url)
   end
 end

@@ -1,12 +1,42 @@
 
+/* Existing styles */
+.map-info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+
+  margin-top: 20px;
+}
+
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
+  border-radius: 20px;
   height: 400px; /* Adjust height as needed */
+  position: relative; /* Ensure positioning context for the iframe */
+  z-index: 1; /* Keep the hero image under the iframe */
 }
+
+/* New styles for the iframe */
+.cloud-map {
+  position: absolute;
+  bottom: -50px; /* Adjust for desired overlap */
+  right: 20px; /* Place it towards the right or adjust as needed */
+  z-index: 2; /* Ensures it's above the hero image */
+  border: 1px solid black; /* Optional, for visibility */
+}
+
+/* Adjust the container or its parent for relative positioning if not already set */
+.container {
+  position: relative; /* This is crucial for positioning the iframe */
+}
+
 
 .hero-content h2 {
   color: white;
@@ -20,11 +50,28 @@
   flex-direction: column; /* Stack cards vertically */
 }
 
+.cloud-info .show-card {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 20px;
+
+}
+
+.show-address {
+
+  font-size: 20px;
+  padding: 20px;
+  align-items: left;
+}
+
+.show-address img {
+  color: #dc3545;
+}
+
 .cloud-info .card {
   border-color: grey;
   text-align: center;
   border-radius: 20px;
-  width: 70%;
   margin-top: 20px;
   padding: 20px;
   background: white;
@@ -40,10 +87,17 @@
   display: inline-block;
   padding: 10px 15px;
   margin: 10px 5px;
-  background-color: #007bff;
+  background-color: pink;
   color: white;
   text-decoration: none;
   border-radius: 5px;
+}
+
+#new_booking {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+margin-bottom: 20 px;
 }
 
 .delete-button {
@@ -52,11 +106,4 @@
 
 .back-button {
   background-color: #6c757d;
-}
-
-.availability-button {
-  background-color: #28a745;
-  width: 70%;
-  text-align: center;
-  margin-top: 40px;
 }

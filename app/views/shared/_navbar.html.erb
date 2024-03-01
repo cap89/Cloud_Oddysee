@@ -11,12 +11,14 @@
       <a href="<%= new_cloud_path %>" >
         <%= image_tag("add_cloud.svg", alt: "Add", height: "35") %>
       </a>
-      <a href="<%= edit_user_registration_path %>" >
+      <a href="<%= profile_path %>" >
         <%= image_tag("profile.svg", alt: "Profile", height: "35") %>
       </a>
+      <% if user_signed_in? %>
       <a href="<%= destroy_user_session_path %>" class="dropdown-item" data-turbo-method="delete">
         <%= image_tag("logout.svg", alt: "Logout", height: "35") %>
       </a>
+      <% end %>
     </div>
   </div>
 </nav>
