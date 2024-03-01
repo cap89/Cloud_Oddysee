@@ -8,6 +8,14 @@ class CloudsController < ApplicationController
 
   def show
     @booking = Booking.new
+
+    @clouds = Cloud.all
+    @markers = @clouds.geocoded.map do |cloud|
+      {
+        lat: cloud.latitude,
+        lng: cloud.longitude
+      }
+    end
   end
 
   def new
