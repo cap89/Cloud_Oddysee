@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.cloud = @cloud
     if @booking.save!
-    redirect_to cloud_path(@cloud), notice: 'Booking was successfully created.'
+    redirect_to profile_path, notice: 'Booking was successfully created.'
     else
       render :new, status: :unprocessable_entity, notice: 'Booking was not created. Please try again.'
     end

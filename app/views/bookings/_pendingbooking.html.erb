@@ -11,8 +11,8 @@
                 <p>Start of Reservation: <strong><%= booking.start_date %></strong></p>
                 <p>End of of Reservation: <strong><%= booking.end_date %></strong></p>
                 <div class="delete-link">
-                <%= link_to_to 'Accept this booking', accept_booking_path(booking), method: :patch %>
-                <%= link_to_to 'Reject this booking', reject_booking_path(booking), method: :patch %>
+                <%= link_to 'Accept this booking', accept_booking_path(booking), method: :patch %>
+                <%= link_to 'Reject this booking', reject_booking_path(booking), method: :patch %>
               </div>
           </div>
         <% end %>

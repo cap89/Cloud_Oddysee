@@ -6,40 +6,14 @@
   <br>
   <br>
   <h4 class="headline-profile">The clouds you've reserved, floating in your slice of the sky.</h4>
-  <%= render currentbookings, bookings: @bookings %>
+  <%= render "bookings/currentbookings", bookings: @bookings %>
   <br>
   <br>
   <h4 class="headline-profile">Glimpse the clouds you've spotted and kindly offered.</h4>
+  <%= render partial: 'clouds/offeredclouds', collection: @clouds, as: :cloud, locals: { clouds: @my_clouds } %>
+  <br>
+  <br>
+  <h4 class="headline-profile">Here you'll find booking requests for the clouds you offered</h4>
   <%= render "bookings/pendingbooking", pending_bookings: @pending_bookings %>
 
 </div>
-
-<p>First name <%= @user.first_name %></p>
-<p>Last name <%= @user.last_name %></p>
-<p>Email <%= @user.email %></p>
-<p>Your user id (just for our info) <%= @user.id %></p>
-
-<h2>These the clouds you booked</h2>
-
-<% @bookings.each do |booking| %>
-<div>
-<img height="200px", src="<%= booking.cloud.picture_url %>" alt="<%= booking.cloud.name %>">
-    <p>Booking ID  <%= booking.id %></p>
-    <p>User ID <%= booking.user_id %></p>
-    <p>Booking Status <%= booking.status %> </p>
-<p>Booking Start Date: <%= booking.start_date %>
-    Booking End Date: <%= booking.end_date %></p>
-    Booking Status: <%= booking.status %></p> // to be removed later
-<p>Cloud name: <%= booking.cloud.name %></p>
-<p>Cloud category: <%= booking.cloud.category %></p>
-<p>Cloud address: <%= booking.cloud.address %></p>
-</div>
-<div>
-<%= link_to "Delete",
-  booking_path(booking),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this booking?"} %>
-  </div>
-  <% end %>
-
-<h2>Find the pending bookings here</h2>
-<%= render "bookings/pendingbooking", pending_bookings: @pending_bookings %>
