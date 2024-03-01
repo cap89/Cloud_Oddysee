@@ -4,8 +4,8 @@ class Booking < ApplicationRecord
 
   validates :start_date, :end_date, presence: true
   validates :end_date, comparison: { greater_than: :start_date, message: "must be later"  }
-  validate :start_date_greater_than_available_from
-  validate :end_date_less_than_available_until
+  # validate :start_date_greater_than_available_from
+  # validate :end_date_less_than_available_until
   validate :cannot_book_own_cloud
 
   private
