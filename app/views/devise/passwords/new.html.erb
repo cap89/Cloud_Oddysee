@@ -1,4 +1,5 @@
-<h2>Forgot your password?</h2>
+<div class="container">
+<h2 class="headline">Has your password wandered off on a merry adventure? No worries! Retrieve it here and let the magic of access begin anew!</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
@@ -11,8 +12,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+    <%= f.button :submit, "Reset my password", class: "custom-button-update"%>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
