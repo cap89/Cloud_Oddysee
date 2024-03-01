@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <% @clouds.each do |cloud| %>
+    <% @clouds.reverse.each do |cloud| %>
       <div class="col-sm-4 mb-3">
         <div class="card custom-card" style="border-radius: 20px;">
           <%= image_tag(cloud.picture_url, class: "card-img-top", alt: "Cloud Image") %>
