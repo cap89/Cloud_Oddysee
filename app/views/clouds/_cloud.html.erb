@@ -8,14 +8,33 @@
     <div class="show-card"> <%= cloud.description %></div>
     </div>
 
+<div class="show-address">
+  <%= image_tag("wind.svg", alt: "wind", height: "35") %> This is where you are going to float. <strong>Expect <%= [
+    'strong west-wind',
+    'mild wind from the east',
+    'gentle northern breeze',
+    'steady south-wind',
+    'fierce north-easterly gale',
+    'light south-westerly winds',
+    'variable winds with gusts',
+    'calm breezes',
+    'brisk eastern winds',
+    'howling winds from the west',
+    'soft zephyrs from the south',
+    'intense stormy winds',
+    'moderate north-wind',
+    'whispering easterly winds',
+    'turbulent sea breezes'
+  ].sample %></strong>, and kindly note that the whispers of the wind are ever-changing.
+</div>
     <% if @cloud %>
-<iframe class="map-info" src="https://www.openstreetmap.org/export/embed.html?bbox=<%= @cloud.longitude - 2.2 %>%2C<%= @cloud.latitude - 2.2 %>%2C<%= @cloud.longitude + 2.2 %>%2C<%= @cloud.latitude + 2.2 %>&amp;layer=mapnik" style="border: 1px solid black"></iframe>
+<iframe class="map-info" src="https://www.openstreetmap.org/export/embed.html?bbox=<%= @cloud.longitude - 2.2 %>%2C<%= @cloud.latitude - 2.2 %>%2C<%= @cloud.longitude + 2.2 %>%2C<%= @cloud.latitude + 2.2 %>&amp;layer=mapnik" style="border: 1px solid grey"></iframe>
 <% else %>
   <p>Cloud not found.</p>
 <% end %>
 <br/>
-        <div class="show-address"><%= image_tag("address.svg", alt: "Cloud Odyssey", height: "35") %> Set your compass to <strong><%= cloud.address %></strong></div>
-    <div class="show-address"><%= image_tag("calender.svg", alt: "Cloud Odyssey", height: "35") %> The cloud graces the sky from <strong><%= cloud.available_from %></strong> until its farewell on <strong><%= cloud.available_until %></strong></div>
+        <div class="show-address"><%= image_tag("address.svg", alt: "address", height: "35") %> Set your compass to <strong><%= cloud.address %></strong></div>
+    <div class="show-address"><%= image_tag("calender.svg", alt: "calender", height: "35") %> The cloud graces the sky from <strong><%= cloud.available_from %></strong> until its farewell on <strong><%= cloud.available_until %></strong></div>
 
 
 
