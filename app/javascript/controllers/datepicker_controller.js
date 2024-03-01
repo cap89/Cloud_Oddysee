@@ -57,14 +57,21 @@ export default class extends Controller {
 
   updateDates(selectedDates, startInput, endInput) {
     if (selectedDates.length === 2) {
-      startInput.value = selectedDates[0].toISOString().substring(0, 10);
-      endInput.value = selectedDates[1].toISOString().substring(0, 10);
+      startInput.value = this.adjustDateForTimezoneOffset(selectedDates[0]);
+      endInput.value = this.adjustDateForTimezoneOffset(selectedDates[1]);
     }
   }
 
   updateEndInput(selectedDates, endInput) {
     if (selectedDates.length === 2) {
-      endInput.value = selectedDates[1].toISOString().substring(0, 10);
+      endInput.value = this.adjustDateForTimezoneOffset(selectedDates[1]);
     }
+  }
+
+  // Helper method to adjust the date for the browser's timezone offset
+  adjustDateForTimezoneOffset(date) {
+    const tzOffset = date.getTimezoneOffset() * 60000; // offset in milliseconds
+    const adjustedDate = new Date(date - tzOffset);
+    return adjustedDate.toISOString().split('T')[0];
   }
 }
