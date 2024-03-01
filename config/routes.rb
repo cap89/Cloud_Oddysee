@@ -4,8 +4,15 @@ Rails.application.routes.draw do
 
   resources :clouds, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:new, :create]
+
   end
-  resources :bookings, only: [:edit, :destroy]
+  resources :bookings, only: [:edit, :destroy] do
+    member do
+      patch :accept
+      patch :reject
+    end
+
+  end
     # resources :users, only: [:new, :create, :edit, :destroy]
 
   get "profile", to: "pages#profile", as: :profile
