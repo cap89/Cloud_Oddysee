@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit, :update, :destroy]
+  before_action :set_booking, only: [:edit, :update, :destroy, :accept, :reject]
 
   def new
     @booking = Booking.new
@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    
+
     @booking = Booking.new(booking_params)
     @cloud = Cloud.find(params[:cloud_id])
     @booking.user = current_user
@@ -22,7 +22,6 @@ class BookingsController < ApplicationController
     end
   end
 
-# can be done at a later stage
   def update
     @booking.update(booking_params)
     @booking.save
@@ -32,6 +31,16 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
     redirect_to profile_path
+  end
+
+  def accept
+    @booking.update!(status: :accepted)
+    redirect_to profile_path, notice: 'Booking accepted.'
+  end
+
+  def reject
+    @booking.update!(status: :rejected)
+    redirect_to profile_path, notice: 'Booking rejected.'
   end
 
   private
