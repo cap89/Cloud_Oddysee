@@ -1,6 +1,6 @@
 class CloudsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_cloud, only: [:show, :edit, :update, :destroy]
+  before_action :set_cloud, only: [:show, :edit, :update, :destroy, :accept, :reject]
 
   def index
     @clouds = Cloud.all
@@ -8,6 +8,14 @@ class CloudsController < ApplicationController
 
   def show
     @booking = Booking.new
+
+#    @clouds = Cloud.all
+#    @markers = @clouds.geocoded.map do |cloud|
+#       {
+#         lat: cloud.latitude,
+#         lng: cloud.longitude
+#       }
+#     end
   end
 
   def new
@@ -41,6 +49,16 @@ class CloudsController < ApplicationController
     redirect_to clouds_path, notice: 'Cloud was successfully destroyed.'
   end
 
+  def accept
+    @booking.update(status: :accepted)
+    redirect_to user_profile_path, notice: 'Booking accepted.'
+  end
+
+  def reject
+    @booking.update(status: :rejected)
+    redirect_to user_profile_path, notice: 'Booking rejected.'
+  end
+
   private
 
   def set_cloud
@@ -48,6 +66,6 @@ class CloudsController < ApplicationController
   end
 
   def cloud_params
-    params.require(:cloud).permit(:name, :category, :description, :address, :picture_url)
+    params.require(:cloud).permit(:name, :category, :description, :address, :picture_url, :latitude, :longitude, :available_from, :available_until)
   end
 end

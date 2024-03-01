@@ -78,3 +78,5 @@ end
 gem "devise"
 gem "faker"
 gem "unsplash"
+gem "geocoder"
+
